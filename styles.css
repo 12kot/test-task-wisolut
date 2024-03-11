@@ -167,6 +167,13 @@ body {
   font-size: 14px;
 }
 
+.forgot__password p {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .remember__button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -314,11 +321,10 @@ a {
   }
 
   .form__container {
-    margin-top: 215px;
+    margin-top: 180px;
   }
 
   .login__image {
-
     -o-object-fit: contain;
     object-fit: contain;
 
