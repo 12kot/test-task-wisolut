@@ -1,4 +1,3 @@
-
 :root {
   --font-color: #000000;
   --neutral-font-color: #757575;
@@ -48,16 +47,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
-}
-
-body > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-
-body > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
 }
 
 .container {
@@ -236,7 +225,6 @@ header {
   padding: 36px 0px 36px 32px;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
 
   display: flex;
@@ -314,18 +302,11 @@ a {
     max-height: -moz-fit-content;
     max-height: fit-content;
     overflow: auto;
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-  }
-  body > *:nth-child(1) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  body > *:nth-child(2) {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 
   .container {
@@ -333,15 +314,14 @@ a {
   }
 
   .form__container {
-    margin-top: 210px;
+    margin-top: 215px;
   }
 
   .login__image {
-    margin-top: 30px;
 
     -o-object-fit: contain;
-
     object-fit: contain;
+
     width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
