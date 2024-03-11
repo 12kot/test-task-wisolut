@@ -1,3 +1,4 @@
+
 :root {
   --font-color: #000000;
   --neutral-font-color: #757575;
@@ -40,28 +41,60 @@ body {
   color: var(--font-color);
   background-color: var(--bg-color);
 
+  display: -ms-grid;
+
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
 }
 
+body > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+body > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 
   height: 100%;
   width: 100%;
 
   position: relative;
+  -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
 }
 
 .form__container {
+  -ms-flex-item-align: center;
   align-self: center;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 32px;
 
@@ -72,7 +105,12 @@ body {
 }
 
 .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 8px;
 
@@ -90,7 +128,12 @@ body {
 }
 
 .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 24px;
 
@@ -98,13 +141,23 @@ body {
 }
 
 .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 16px;
 }
 
 .input__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 16px;
 
@@ -112,15 +165,25 @@ body {
 }
 
 .forgot__password {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   font-size: 14px;
 }
 
 .remember__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 8px;
   color: var(--neutral-font-color);
@@ -134,7 +197,12 @@ body {
 }
 
 .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 16px;
 }
@@ -146,6 +214,8 @@ body {
 }
 
 .buttons .svg {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 10px;
 }
@@ -155,6 +225,7 @@ body {
 }
 
 .login__image {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -163,6 +234,10 @@ body {
 
 header {
   padding: 36px 0px 36px 32px;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
 
   display: flex;
   width: 100%;
@@ -177,6 +252,10 @@ button {
   border: 1px solid var(--border-color);
   font-size: var(--font-size);
   height: 44px;
+
+  -webkit-transition: var(--transition);
+
+  -o-transition: var(--transition);
 
   transition: var(--transition);
 }
@@ -193,8 +272,14 @@ button {
   padding: 12px 50px;
 
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
   color: var(--neutral-font-color);
@@ -225,10 +310,22 @@ a {
 
 @media screen and (max-width: 700px) {
   body {
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
     max-height: fit-content;
     overflow: auto;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr) [2];
     grid-template-rows: repeat(2, 1fr);
+  }
+  body > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  body > *:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
   }
 
   .container {
@@ -241,10 +338,14 @@ a {
 
   .login__image {
     margin-top: 30px;
+
+    -o-object-fit: contain;
+
     object-fit: contain;
     width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
-    max-height: fit-content;
     overflow: hidden;
   }
 }
