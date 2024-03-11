@@ -244,6 +244,7 @@ a {
     object-fit: contain;
     width: 100%;
     height: fit-content;
+    max-height: fit-content;
     overflow: hidden;
   }
 }
